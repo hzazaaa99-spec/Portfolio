@@ -1,0 +1,1028 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <!-- Reglages de base de la page -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Zeinab Hammoud</title>
+
+    <!-- Fichier CSS du site -->
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+
+    <!-- Bibliotheque d'icones utilisee pour le menu, les boutons et les reseaux -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- HEADER : logo + menu de navigation -->
+    <header class="header">
+      <a href="#accueil" class="logo">Zeinab<span>.</span></a>
+
+      <!-- Icone du menu burger, visible seulement sur petit ecran grace au CSS -->
+      <div class="bx bx-menu" id="menu-icon"></div>
+
+      <nav class="navbar">
+        <a href="#accueil" class="active">Accueil</a>
+        <a href="#about">À propos</a>
+        <a href="#projets">Projets</a>
+        <a href="#stage">Stage</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- ACCUEIL : premiere section visible du portfolio -->
+    <section class="home" id="accueil">
+      <!-- Partie gauche : texte de presentation -->
+      <div class="home-content">
+        <p class="hello">Salut, je suis</p>
+
+        <h1>
+          <span class="firstname">Zeinab</span>
+          <span class="lastname">Hammoud</span>
+        </h1>
+
+        <div class="text-animate">
+          <h3>
+            &Eacute;tudiante en
+            <span>Informatique &amp; D&eacute;veloppement</span>
+          </h3>
+        </div>
+
+        <p class="description">
+          Passionn&eacute;e par le d&eacute;veloppement et les nouvelles
+          technologies, je d&eacute;veloppe mes comp&eacute;tences &agrave;
+          travers mes projets et mes exp&eacute;riences en informatique.
+        </p>
+
+        <!-- Boutons principaux -->
+        <div class="btn-box">
+          <a href="#projets" class="btn">
+            Mes projets <i class="bx bx-right-arrow-alt"></i>
+          </a>
+
+          <a
+            href="./CV_Zeinab_Hammoud.pdf"
+            class="btn"
+            target="_blank"
+            rel="noopener noreferrer">
+            Mon CV <i class="bx bx-download"></i>
+          </a>
+        </div>
+      </div>
+      <script>
+        // Change la couleur du lien sélectionné dans la navigation
+        const navLinks = document.querySelectorAll(".navbar a");
+
+        navLinks.forEach(function (link) {
+          link.addEventListener("click", function () {
+            navLinks.forEach(function (item) {
+              item.classList.remove("active");
+            });
+
+            link.classList.add("active");
+          });
+        });
+      </script>
+
+      <!-- Liens vers les reseaux -->
+      <div class="network">
+        <a
+          href="https://www.linkedin.com/in/zeinab-hammoud-74baa2391"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Mon Profil LinkedIn">
+          <i class="bx bxl-linkedin"></i
+        ></a>
+        <a
+          href="https://github.com/hzazaaa99-spec"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Profil GitHub de Zeinab">
+          <i class="bx bxl-github"></i>
+        </a>
+      </div>
+
+      <!-- Partie droite : cercle violet + photo -->
+      <div class="home-img">
+        <div class="purple-circle"></div>
+        <img src="Portrait.png" alt="Portrait" />
+      </div>
+    </section>
+
+    <!-- about section -->+
+    <section class="about-section" id="about">
+      <h2 class="about-heading">About <span>Me</span></h2>
+
+      <div class="about-wrapper">
+        <div class="about-picture">
+          <img src="Portrait 2.png" alt="Portrait de Zeinab" />
+          <span class="about-circle"></span>
+        </div>
+
+        <div class="about-text">
+          <h3>Étudiante en Informatique & Développement</h3>
+
+          <p>
+            Bonjour, moi c'est Zeinab Hammoud. Je suis étudiante en informatique
+            à l'IPSSI de Montpellier. Au cours de ma formation, j'ai découvert
+            plusieurs domaines comme le développement web, les systèmes, les
+            réseaux et la cybersécurité.
+          </p>
+
+          <p>
+            À travers mes projets et mes expériences en stage, j'ai pu mettre en
+            pratique mes connaissances et développer de nouvelles compétences.
+            Curieuse et déterminée, j'aime découvrir de nouvelles technologies
+            et relever de nouveaux défis.
+          </p>
+
+          <button type="button" class="read-more-btn" id="readMoreBtn">
+            En savoir plus
+          </button>
+          <div class="more-about" id="moreAbout">
+            <p>
+              Mon parcours m'a permis de travailler sur différents projets
+              mêlant développement, systèmes et réseaux. J'ai notamment réalisé
+              des projets en HTML, CSS, JavaScript, PHP et SQL, ainsi que des
+              travaux autour de Linux, Windows Server, de la virtualisation et
+              de la sécurité informatique. Mes expériences en stage m'ont
+              également permis de découvrir le travail en environnement
+              professionnel, notamment à travers la gestion et l'amélioration de
+              sites web. J'aime apprendre par la pratique, découvrir de nouveaux
+              outils et développer progressivement mes compétences.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      const readMoreBtn = document.getElementById("readMoreBtn");
+      const moreAbout = document.getElementById("moreAbout");
+
+      readMoreBtn.addEventListener("click", function () {
+        moreAbout.classList.toggle("active");
+
+        if (moreAbout.classList.contains("active")) {
+          readMoreBtn.textContent = "Voir moins";
+        } else {
+          readMoreBtn.textContent = "En savoir plus";
+        }
+      });
+    </script>
+
+    <!-- ================================
+     SECTION PROJETS
+================================ -->
+
+    <section class="projects" id="projets">
+      <!-- Titre -->
+      <h2 class="section-title">Mes <span>Projets</span></h2>
+
+      <!-- Toutes les cartes -->
+      <div class="projects-container">
+        <!-- Carte Quizzeo -->
+        <button type="button" class="project-card" data-modal="quizzeo-modal">
+          <div class="project-icon">❓</div>
+
+          <h3>Quizzeo</h3>
+
+          <div class="project-technologies">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>PHP</span>
+            <span>SQL</span>
+          </div>
+
+          <p class="project-instruction">Cliquer dessus pour découvrir</p>
+        </button>
+
+        <!-- Carte BankSO -->
+        <button type="button" class="project-card" data-modal="bankso-modal">
+          <div class="project-icon">🖥️</div>
+
+          <h3>BankSO</h3>
+
+          <div class="project-technologies">
+            <span>Windows Server</span>
+            <span>Active Directory</span>
+            <span>pfSense</span>
+          </div>
+
+          <p class="project-instruction">Cliquer dessus pour découvrir</p>
+        </button>
+
+        <!-- Carte TechSud -->
+        <button type="button" class="project-card" data-modal="techsud-modal">
+          <div class="project-icon">🔐</div>
+
+          <h3>TechSud</h3>
+
+          <div class="project-technologies">
+            <span>Debian</span>
+            <span>Linux</span>
+            <span>Fail2Ban</span>
+            <span>MariaDB</span>
+          </div>
+
+          <p class="project-instruction">Cliquer dessus pour découvrir</p>
+        </button>
+
+        <!-- Carte Hardening Apache -->
+        <button type="button" class="project-card" data-modal="apache-modal">
+          <div class="project-icon">🛡️</div>
+
+          <h3>Hardening Apache</h3>
+
+          <div class="project-technologies">
+            <span>Apache</span>
+            <span>HSTS</span>
+            <span>CSP</span>
+            <span>ModSecurity</span>
+          </div>
+
+          <p class="project-instruction">Cliquer dessus pour découvrir</p>
+        </button>
+
+        <!-- Carte VMware ESXi 8 -->
+        <button type="button" class="project-card" data-modal="esxi-modal">
+          <div class="project-icon">🗄️</div>
+
+          <h3>VMware ESXi 8</h3>
+
+          <div class="project-technologies">
+            <span>VMware</span>
+            <span>Machines virtuelles</span>
+            <span>NFS</span>
+            <span>Snapshots</span>
+          </div>
+
+          <p class="project-instruction">Cliquer dessus pour découvrir</p>
+        </button>
+
+        <!-- Carte Proxmox VE -->
+        <button type="button" class="project-card" data-modal="proxmox-modal">
+          <div class="project-icon">⚙️</div>
+
+          <h3>Proxmox VE</h3>
+
+          <div class="project-technologies">
+            <span>Proxmox</span>
+            <span>Virtualisation</span>
+            <span>NAT</span>
+            <span>Bridge</span>
+          </div>
+
+          <p class="project-instruction">Cliquer dessus pour découvrir</p>
+        </button>
+
+        <!-- Carte Unity 3D -->
+        <button type="button" class="project-card" data-modal="unity-modal">
+          <div class="project-icon">🎮</div>
+
+          <h3>Projet Unity 3D</h3>
+
+          <div class="project-technologies">
+            <span>Unity</span>
+            <span>C#</span>
+            <span>Scripts</span>
+            <span>3D</span>
+          </div>
+
+          <p class="project-instruction">Cliquer dessus pour découvrir</p>
+        </button>
+      </div>
+    </section>
+
+    <!-- ================================
+     FENÊTRE QUIZZEO
+================================ -->
+
+    <div class="project-modal" id="quizzeo-modal">
+      <div class="modal-content">
+        <button type="button" class="close-modal" aria-label="Fermer">
+          &times;
+        </button>
+
+        <div class="modal-icon">❓</div>
+
+        <h2>Quizzeo</h2>
+
+        <p>
+          Quizzeo est une application de quiz comprenant un système
+          d'authentification et une base de données. Elle permet de gérer les
+          utilisateurs, les questions et les réponses.
+        </p>
+
+        <h3>Technologies utilisées</h3>
+
+        <div class="modal-technologies">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>PHP</span>
+          <span>SQL</span>
+        </div>
+
+        <a
+          href="https://github.com/hzazaaa99-spec/quizzeo.git"
+          class="project-link"
+          target="_blank"
+          rel="noopener noreferrer">
+          Voir le projet sur GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- ================================
+     FENÊTRE BANKSO
+================================ -->
+
+    <div class="project-modal" id="bankso-modal">
+      <div class="modal-content">
+        <button type="button" class="close-modal" aria-label="Fermer">
+          &times;
+        </button>
+
+        <div class="modal-icon">🖥️</div>
+
+        <h2>BankSO</h2>
+
+        <p>
+          BankSO est un projet de création d'une infrastructure réseau
+          comprenant Active Directory, DNS, DHCP, des profils itinérants ainsi
+          qu'un pare-feu pfSense.
+        </p>
+
+        <h3>Technologies utilisées</h3>
+
+        <div class="modal-technologies">
+          <span>Windows Server</span>
+          <span>Active Directory</span>
+          <span>DNS</span>
+          <span>DHCP</span>
+          <span>pfSense</span>
+        </div>
+
+        <a
+          href="TON-LIEN-BANKSO"
+          class="project-link"
+          target="_blank"
+          rel="noopener noreferrer">
+          Voir le projet
+        </a>
+      </div>
+    </div>
+
+    <!-- ================================
+     FENÊTRE TECHSUD
+================================ -->
+
+    <div class="project-modal" id="techsud-modal">
+      <div class="modal-content">
+        <button type="button" class="close-modal" aria-label="Fermer">
+          &times;
+        </button>
+
+        <div class="modal-icon">🔐</div>
+
+        <h2>TechSud</h2>
+
+        <p>
+          TechSud est un projet de sécurisation d'un serveur Debian. Il comprend
+          la sécurisation de SSH, la configuration d'UFW et de Fail2Ban,
+          l'utilisation de MariaDB et la création d'un script d'audit des ports.
+        </p>
+
+        <h3>Technologies utilisées</h3>
+
+        <div class="modal-technologies">
+          <span>Debian</span>
+          <span>SSH</span>
+          <span>UFW</span>
+          <span>Fail2Ban</span>
+          <span>MariaDB</span>
+        </div>
+
+        <a
+          href="https://github.com/hzazaaa99-spec/techsud-audit.git"
+          class="project-link"
+          target="_blank"
+          rel="noopener noreferrer">
+          Voir le projet sur GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- ================================
+     FENÊTRE HARDENING APACHE
+================================ -->
+
+    <div class="project-modal" id="apache-modal">
+      <div class="modal-content">
+        <button type="button" class="close-modal" aria-label="Fermer">
+          &times;
+        </button>
+
+        <div class="modal-icon">🛡️</div>
+
+        <h2>Hardening Apache</h2>
+
+        <p>
+          Ce projet consistait à renforcer la sécurité d'un serveur web Apache.
+          J'ai configuré plusieurs en-têtes de sécurité comme HSTS, CSP,
+          X-Frame-Options et X-Content-Type-Options. J'ai également utilisé
+          ModSecurity pour améliorer la protection du serveur.
+        </p>
+
+        <h3>Technologies utilisées</h3>
+
+        <div class="modal-technologies">
+          <span>Apache</span>
+          <span>HSTS</span>
+          <span>CSP</span>
+          <span>X-Frame-Options</span>
+          <span>ModSecurity</span>
+        </div>
+
+        <a
+          href="TON-LIEN-APACHE"
+          class="project-link"
+          target="_blank"
+          rel="noopener noreferrer">
+          Voir le projet
+        </a>
+      </div>
+    </div>
+
+    <!-- ================================
+     FENÊTRE VMWARE ESXI 8
+================================ -->
+
+    <div class="project-modal" id="esxi-modal">
+      <div class="modal-content">
+        <button type="button" class="close-modal" aria-label="Fermer">
+          &times;
+        </button>
+
+        <div class="modal-icon">🗄️</div>
+
+        <h2>VMware ESXi 8</h2>
+
+        <p>
+          Ce projet m'a permis de découvrir la virtualisation avec VMware ESXi
+          8. J'ai créé et configuré des machines virtuelles, ajouté un datastore
+          NFS et utilisé des snapshots pour enregistrer différents états des
+          machines.
+        </p>
+
+        <h3>Technologies utilisées</h3>
+
+        <div class="modal-technologies">
+          <span>VMware ESXi 8</span>
+          <span>Machines virtuelles</span>
+          <span>NFS</span>
+          <span>Snapshots</span>
+        </div>
+
+        <a
+          href="TON-LIEN-ESXI"
+          class="project-link"
+          target="_blank"
+          rel="noopener noreferrer">
+          Voir le projet
+        </a>
+      </div>
+    </div>
+
+    <!-- ================================
+     FENÊTRE PROXMOX VE
+================================ -->
+
+    <div class="project-modal" id="proxmox-modal">
+      <div class="modal-content">
+        <button type="button" class="close-modal" aria-label="Fermer">
+          &times;
+        </button>
+
+        <div class="modal-icon">⚙️</div>
+
+        <h2>Proxmox VE</h2>
+
+        <p>
+          Ce projet portait sur la virtualisation avec Proxmox VE. J'ai créé et
+          configuré plusieurs machines virtuelles et travaillé sur leur
+          connexion réseau en utilisant les modes NAT et Bridge.
+        </p>
+
+        <h3>Technologies utilisées</h3>
+
+        <div class="modal-technologies">
+          <span>Proxmox VE</span>
+          <span>Virtualisation</span>
+          <span>Machines virtuelles</span>
+          <span>NAT</span>
+          <span>Bridge</span>
+        </div>
+
+        <a
+          href="TON-LIEN-PROXMOX"
+          class="project-link"
+          target="_blank"
+          rel="noopener noreferrer">
+          Voir le projet
+        </a>
+      </div>
+    </div>
+
+    <!-- ================================
+     FENÊTRE UNITY 3D
+================================ -->
+
+    <div class="project-modal" id="unity-modal">
+      <div class="modal-content">
+        <button type="button" class="close-modal" aria-label="Fermer">
+          &times;
+        </button>
+
+        <div class="modal-icon">🎮</div>
+
+        <h2>Projet Unity 3D</h2>
+
+        <p>
+          Dans ce projet, j'ai utilisé Unity pour développer un environnement en
+          trois dimensions. J'ai intégré des scripts et travaillé sur les
+          déplacements ainsi que sur les différentes mécaniques du personnage.
+        </p>
+
+        <h3>Technologies utilisées</h3>
+
+        <div class="modal-technologies">
+          <span>Unity</span>
+          <span>C#</span>
+          <span>Scripts</span>
+          <span>Environnement 3D</span>
+        </div>
+
+        <a
+          href="TON-LIEN-UNITY"
+          class="project-link"
+          target="_blank"
+          rel="noopener noreferrer">
+          Voir le projet
+        </a>
+      </div>
+    </div>
+    <script>
+      /* Récupère toutes les cartes des projets */
+      const projectCards = document.querySelectorAll(".project-card");
+
+      /* Récupère tous les boutons de fermeture */
+      const closeModalButtons = document.querySelectorAll(".close-modal");
+
+      /* Ouvre la bonne fenêtre quand on clique sur une carte */
+      projectCards.forEach(function (card) {
+        card.addEventListener("click", function () {
+          const modalId = card.getAttribute("data-modal");
+          const modal = document.getElementById(modalId);
+
+          if (modal) {
+            modal.classList.add("active");
+          }
+        });
+      });
+
+      /* Ferme la fenêtre avec la croix */
+      closeModalButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+          const modal = button.closest(".project-modal");
+          modal.classList.remove("active");
+        });
+      });
+
+      /* Ferme la fenêtre en cliquant sur le fond noir */
+      document.querySelectorAll(".project-modal").forEach(function (modal) {
+        modal.addEventListener("click", function (event) {
+          if (event.target === modal) {
+            modal.classList.remove("active");
+          }
+        });
+      });
+
+      /* Ferme la fenêtre avec la touche Échap */
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          document
+            .querySelectorAll(".project-modal.active")
+            .forEach(function (modal) {
+              modal.classList.remove("active");
+            });
+        }
+      });
+    </script>
+
+    <!-- ================================
+     SECTION STAGE
+================================ -->
+
+    <section class="internship" id="stage">
+      <!-- Titre de la section -->
+      <h2 class="section-title">Mon <span>Stage</span></h2>
+
+      <div class="internship-container">
+        <!-- Partie gauche -->
+        <div class="internship-visual">
+          <div class="internship-logo">MTMSI</div>
+
+          <span class="internship-duration"> Stage de 2 mois </span>
+
+          <p>Montpellier</p>
+        </div>
+
+        <!-- Partie droite -->
+        <div class="internship-content">
+          <p class="internship-category">Expérience professionnelle</p>
+
+          <h3>Association MTMSI</h3>
+
+          <!-- Contexte du stage -->
+          <div class="internship-part">
+            <h4>Contexte du stage</h4>
+
+            <p>
+              Dans le cadre de ma première année de Bachelor Informatique et
+              Développement à l'IPSSI Montpellier, j'ai réalisé un stage de deux
+              mois au sein de l'association MTMSI. J'ai travaillé avec une autre
+              stagiaire sur l'amélioration d'un site WordPress existant.
+            </p>
+          </div>
+
+          <!-- Missions réalisées -->
+          <div class="internship-part">
+            <h4>Mes principales missions</h4>
+
+            <ul class="internship-tasks">
+              <li>Amélioration et mise à jour des pages du site.</li>
+
+              <li>Modification des pages Présentation et Fonctionnement.</li>
+
+              <li>Création de la page Présidence.</li>
+
+              <li>
+                Ajout de boutons de navigation entre les différentes pages.
+              </li>
+
+              <li>
+                Correction de problèmes d'affichage, de liens et d'images.
+              </li>
+
+              <li>
+                Vérification des formulaires et de l'affichage sur ordinateur et
+                téléphone.
+              </li>
+            </ul>
+          </div>
+
+          <!-- Outils utilisés -->
+          <div class="internship-part">
+            <h4>Outils utilisés</h4>
+
+            <div class="internship-technologies">
+              <span>WordPress</span>
+              <span>Colibri</span>
+              <span>CSS</span>
+              <span>WinSCP</span>
+              <span>Adminer</span>
+              <span>Local WP</span>
+              <span>Yulpa</span>
+            </div>
+          </div>
+
+          <!-- Bouton facultatif -->
+          <a
+            href="./documents/Bachelor1_Zeinab_Hammoud_RapportStage (1).pdf"
+            class="internship-button"
+            target="_blank"
+            rel="noopener noreferrer">
+            Voir mon rapport de stage
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================
+     SECTION CERTIFICATIONS
+================================= -->
+
+    <section class="certifications-section" id="certifications">
+      <!-- En-tête -->
+      <div class="certifications-header">
+        <p class="certifications-label">APPRENTISSAGE CONTINU</p>
+
+        <h2 class="certifications-title">Mes <span>Certifications</span></h2>
+
+        <p class="certifications-introduction">
+          Cette frise présente les certifications obtenues au cours de mon
+          parcours et sera enrichie au fil de mes nouvelles formations.
+        </p>
+      </div>
+
+      <!-- Frise des certifications -->
+      <div class="certifications-timeline">
+        <!-- Certification 1 -->
+        <article class="certification-step">
+          <div class="certification-number">01</div>
+
+          <div class="certification-content">
+            <p class="certification-domain">RGPD · CNIL</p>
+
+            <h3>Le RGPD et ses notions clés</h3>
+
+            <p class="certification-description">
+              Comprendre les notions fondamentales et le vocabulaire essentiel
+              du Règlement général sur la protection des données.
+            </p>
+
+            <a
+              href="documents/certifications/Certificat_Le_RGPD_et_ses_notions_clés.pdf"
+              target="_blank"
+              rel="noopener noreferrer">
+              Voir le certificat <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Certification 2 -->
+        <article class="certification-step">
+          <div class="certification-number">02</div>
+
+          <div class="certification-content">
+            <p class="certification-domain">RGPD · CNIL</p>
+
+            <h3>Les principes de la protection des données</h3>
+
+            <p class="certification-description">
+              Découvrir les règles essentielles à respecter lors de la collecte
+              et du traitement des données personnelles.
+            </p>
+
+            <a
+              href="./documents/certifications/Certificat_protection_donnees.pdf"
+              target="_blank"
+              rel="noopener noreferrer">
+              Voir le certificat <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Certification 3 -->
+        <article class="certification-step">
+          <div class="certification-number">03</div>
+
+          <div class="certification-content">
+            <p class="certification-domain">RGPD · CNIL</p>
+
+            <h3>Les responsabilités des acteurs</h3>
+
+            <p class="certification-description">
+              Identifier les différents acteurs concernés par le RGPD et
+              comprendre leurs rôles ainsi que leurs responsabilités.
+            </p>
+
+            <a
+              href="./documents/certifications/Certificat_responsabilites_acteurs.pdf"
+              target="_blank"
+              rel="noopener noreferrer">
+              Voir le certificat <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Certification 4 -->
+        <article class="certification-step">
+          <div class="certification-number">04</div>
+
+          <div class="certification-content">
+            <p class="certification-domain">RGPD · CNIL</p>
+
+            <h3>Le DPO et les outils de la conformité</h3>
+
+            <p class="certification-description">
+              Découvrir le rôle du délégué à la protection des données et les
+              outils permettant d’assurer la conformité.
+            </p>
+
+            <a
+              href="./documents/certifications/Certificat_DPO.pdf"
+              target="_blank"
+              rel="noopener noreferrer">
+              Voir le certificat <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Certification 5 -->
+        <article class="certification-step">
+          <div class="certification-number">05</div>
+
+          <div class="certification-content">
+            <p class="certification-domain">RGPD · CNIL</p>
+
+            <h3>Les collectivités territoriales</h3>
+
+            <p class="certification-description">
+              Comprendre l’application du RGPD et la gestion des données
+              personnelles au sein des collectivités territoriales.
+            </p>
+
+            <a
+              href="./documents/certifications/Certificat_collectivites.pdf"
+              target="_blank"
+              rel="noopener noreferrer">
+              Voir le certificat <span>↗</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- Certification 6 -->
+        <article class="certification-step">
+          <div class="certification-number">06</div>
+
+          <div class="certification-content">
+            <p class="certification-domain">RGPD · CNIL</p>
+
+            <h3>Travail et données personnelles</h3>
+
+            <p class="certification-description">
+              Comprendre les règles relatives à l’utilisation et à la protection
+              des données personnelles dans le monde professionnel.
+            </p>
+
+            <a
+              href="./documents/certifications/Certificat_travail_donnees.pdf"
+              target="_blank"
+              rel="noopener noreferrer">
+              Voir le certificat <span>↗</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <!-- La frise reste ouverte pour les futures certifications -->
+      <div class="certifications-continuation">
+        <span class="continuation-dot"></span>
+
+        <div>
+          <strong>Parcours en évolution</strong>
+
+          <p>De nouvelles certifications seront ajoutées prochainement.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================================
+     SECTION CONTACT
+================================= -->
+
+    <section class="contact-section" id="contact">
+      <!-- En-tête -->
+      <div class="contact-header">
+        <p class="contact-label">CONTACT</p>
+
+        <h2>
+          Mon profil vous intéresse ?
+          <span>Échangeons.</span>
+        </h2>
+
+        <p>
+          Étudiante en informatique, je suis à la recherche d'opportunités pour
+          développer mes compétences et mettre en pratique mes connaissances.
+          N'hésitez pas à me contacter pour échanger.
+        </p>
+      </div>
+
+      <div class="contact-container">
+        <!-- Partie gauche -->
+        <div class="contact-information">
+          <!-- Disponibilité -->
+          <div class="availability">
+            <span class="availability-dot"></span>
+            À la recherche d'opportunités
+          </div>
+
+          <h3>Restons en contact</h3>
+
+          <p class="contact-text">
+            Je souhaite continuer à apprendre et à développer mon expérience
+            dans le domaine de l'informatique. Vous pouvez me contacter pour
+            toute opportunité, proposition ou information complémentaire.
+          </p>
+
+          <!-- Adresse e-mail -->
+          <a href="mailto:TON-EMAIL" class="contact-detail">
+            <span class="contact-detail-icon">@</span>
+
+            <span class="contact-detail-text">
+              <small>E-mail</small>
+              <strong>hzazaaa99@gmail.com</strong>
+            </span>
+
+            <span class="contact-arrow">↗</span>
+          </a>
+
+          <!-- GitHub -->
+          <a
+            href="https://github.com/hzazaaa99-spec"
+            class="contact-detail"
+            target="_blank"
+            rel="noopener noreferrer">
+            <span class="contact-detail-icon">GH</span>
+
+            <span class="contact-detail-text">
+              <small>GitHub</small>
+              <strong>Découvrir mes projets</strong>
+            </span>
+
+            <span class="contact-arrow">↗</span>
+          </a>
+
+          <!-- LinkedIn -->
+          <a
+            href="https://www.linkedin.com/in/zeinab-hammoud-74baa2391"
+            class="contact-detail"
+            target="_blank"
+            rel="noopener noreferrer">
+            <span class="contact-detail-icon">in</span>
+
+            <span class="contact-detail-text">
+              <small>LinkedIn</small>
+              <strong>Voir mon profil</strong>
+            </span>
+
+            <span class="contact-arrow">↗</span>
+          </a>
+        </div>
+
+        <!-- Partie droite : formulaire -->
+        <div class="contact-form-container">
+          <div class="form-decoration">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <h3>Envoyer un message</h3>
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/mkjnzjgo"
+            method="POST">
+            <label for="name">Votre nom</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Entrez votre nom"
+              required />
+
+            <label for="email">Votre e-mail</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="exemple@email.com"
+              required />
+
+            <label for="subject">Sujet</label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Quel est le sujet de votre message ?"
+              required />
+
+            <label for="message">Votre message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="7"
+              placeholder="Écrivez votre message..."
+              required></textarea>
+
+            <button type="submit" class="contact-submit">
+              Envoyer le message ↗
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="portfolio-footer">
+      <p>© 2026 Zeinab Hammoud</p>
+
+      <a href="#accueil"> Retour en haut ↑ </a>
+    </footer>
+  </body>
+</html>

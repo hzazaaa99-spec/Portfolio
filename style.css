@@ -1,0 +1,1840 @@
+/* Police utilisee sur tout le site */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+/* Couleurs principales du portfolio */
+:root {
+  --bg-color: #05060d;
+  --text-color: #ffffff;
+  --muted-color: #c8c3d3;
+  --main-color: #9b45ff;
+}
+
+/* Base propre pour tous les elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = environ 10px */
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  position: fixed; /* Le menu reste en haut */
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 9rem;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(5, 6, 13, 0.85);
+}
+
+.logo {
+  color: var(--text-color);
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.logo span {
+  color: var(--main-color);
+}
+
+.navbar {
+  display: flex;
+  gap: 4rem;
+}
+
+.navbar a {
+  position: relative;
+  color: var(--text-color);
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: var(--main-color);
+}
+
+/* Petite ligne violette sous le lien actif */
+.navbar a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.8rem;
+  width: 100%;
+  height: 0.3rem;
+  border-radius: 1rem;
+  background: var(--main-color);
+}
+
+#menu-icon {
+  display: none;
+  color: var(--text-color);
+  font-size: 3.5rem;
+}
+
+/* =========================
+   SECTION ACCUEIL
+========================= */
+
+.home {
+  min-height: 100vh;
+  padding: 12rem 5% 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 75% 50%,
+      rgba(155, 69, 255, 0.45),
+      transparent 28rem
+    ),
+    var(--bg-color);
+}
+
+/* Partie texte a gauche */
+.home-content {
+  z-index: 2;
+  width: 46%;
+  max-width: 58rem;
+}
+
+.hello {
+  margin-bottom: 1.2rem;
+  color: #eeeeee;
+  font-size: 2.2rem;
+}
+
+.home-content h1 {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(4.5rem, 5vw, 8rem);
+  line-height: 1;
+}
+
+.firstname {
+  color: #ffffff;
+}
+
+.lastname {
+  color: var(--main-color);
+  text-shadow: 0 0 2rem rgba(155, 69, 255, 0.45);
+}
+
+.text-animate h3 {
+  margin-bottom: 2rem;
+  padding-left: 1.4rem;
+  border-left: 0.35rem solid var(--main-color);
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.text-animate span {
+  color: var(--main-color);
+  font-weight: 800;
+}
+
+.description {
+  margin-bottom: 4rem;
+  color: var(--muted-color);
+  font-size: 1.6rem;
+  line-height: 1.7;
+}
+
+/* =========================
+   BOUTONS
+========================= */
+
+.btn-box {
+  display: flex;
+  gap: 2rem;
+}
+
+.btn {
+  min-width: 15rem;
+  height: 5rem;
+  padding: 0 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 4rem;
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.btn:first-child {
+  background: var(--main-color);
+  box-shadow: 0 0 2.5rem rgba(155, 69, 255, 0.45);
+}
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+}
+
+/* =========================
+   RESEAUX
+========================= */
+
+.network {
+  position: absolute;
+  left: 5%;
+  bottom: 4rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.network a {
+  width: 4.5rem;
+  height: 4.5rem;
+  display: grid;
+  place-items: center;
+  border: 0.2rem solid var(--main-color);
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 2.3rem;
+}
+
+.network a:hover {
+  background: var(--main-color);
+}
+
+/* =========================
+   NOUVELLE PHOTO
+========================= */
+
+.home-img {
+  position: relative;
+  z-index: 1;
+  width: min(43vw, 62rem);
+  aspect-ratio: 1; /* garde le bloc carre pour faire un cercle */
+  display: grid;
+  place-items: center;
+}
+
+/* Cercle violet lumineux derriere la photo */
+.purple-circle {
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(155, 69, 255, 0.65),
+    transparent 68%
+  );
+  filter: blur(1rem);
+}
+
+.home-img::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1;
+  border: 0.25rem solid rgba(155, 69, 255, 0.65);
+  border-radius: 50%;
+}
+
+.home-img img {
+  position: relative;
+  z-index: 2;
+  width: 92%;
+  height: 92%;
+  object-fit: cover; /* remplit le cercle sans deformer l'image */
+  object-position: 28% center; /* montre surtout la fille a gauche de l'image */
+  border-radius: 50%;
+  box-shadow: 0 0 3rem rgba(155, 69, 255, 0.35);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+  .navbar {
+    display: none;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+
+  .home {
+    padding-top: 10rem;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .home-content {
+    width: 100%;
+  }
+
+  .text-animate h3 {
+    display: inline-block;
+    text-align: left;
+  }
+
+  .btn-box,
+  .network {
+    justify-content: center;
+  }
+
+  .network {
+    position: static;
+    margin-top: 2rem;
+  }
+
+  .home-img {
+    width: min(82vw, 44rem);
+  }
+}
+
+@media (max-width: 520px) {
+  .header {
+    height: 8rem;
+  }
+
+  .logo {
+    font-size: 2.5rem;
+  }
+
+  .btn-box {
+    flex-direction: column;
+  }
+}
+
+/* =========================
+   SECTION ABOUT
+========================= */
+
+.about-section {
+  min-height: 100vh;
+  padding: 120px 10% 80px;
+  background-color: #07050d;
+  color: #ffffff;
+}
+
+.about-heading {
+  margin-bottom: 80px;
+  text-align: center;
+  font-size: 45px;
+  font-weight: 700;
+}
+
+.about-heading span {
+  color: #a855f7;
+}
+
+.about-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Cercle contenant l’image */
+.about-picture {
+  position: relative;
+  width: 350px;
+  height: 350px;
+  min-width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* On empêche l’image de prendre toute la page */
+.about-picture img {
+  display: block;
+  width: 300px !important;
+  height: 300px !important;
+  max-width: 300px !important;
+  object-fit: cover;
+  object-position: 30% center;
+  border: 4px solid #a855f7;
+  border-radius: 50%;
+  box-shadow:
+    0 0 15px #a855f7,
+    0 0 35px rgba(168, 85, 247, 0.65);
+}
+
+/* Cercle violet animé */
+.about-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-top: 4px solid #a855f7;
+  border-right: 4px solid transparent;
+  border-bottom: 4px solid #6d28d9;
+  border-left: 4px solid transparent;
+  border-radius: 50%;
+  animation: circleRotation 7s linear infinite;
+}
+
+@keyframes circleRotation {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Texte placé à droite */
+.about-text {
+  width: 100%;
+  max-width: 620px;
+}
+
+.about-text h3 {
+  margin-bottom: 20px;
+  color: #a855f7;
+  font-size: 28px;
+  line-height: 1.3;
+}
+
+.about-text p {
+  margin-bottom: 16px;
+  color: #d8d3df;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Téléphone et tablette */
+@media screen and (max-width: 850px) {
+  .about-section {
+    padding: 100px 7% 60px;
+  }
+
+  .about-heading {
+    margin-bottom: 55px;
+    font-size: 36px;
+  }
+
+  .about-wrapper {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .about-picture {
+    width: 280px;
+    height: 280px;
+    min-width: 280px;
+  }
+
+  .about-picture img {
+    width: 240px !important;
+    height: 240px !important;
+    max-width: 240px !important;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .about-text p {
+    text-align: left;
+  }
+}
+
+/* Bouton En savoir plus */
+.read-more-btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 28px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #9333ea, #6d28d9);
+  border: 2px solid #a855f7;
+  border-radius: 25px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.55);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.read-more-btn:hover {
+  color: #a855f7;
+  background: transparent;
+  box-shadow:
+    0 0 15px #a855f7,
+    0 0 30px rgba(168, 85, 247, 0.6);
+  transform: translateY(-3px);
+}
+
+/* Texte supplémentaire caché */
+.more-about {
+  display: none;
+  margin-top: 20px;
+}
+
+.more-about.active {
+  display: block;
+}
+
+/* =================================
+   SECTION MES PROJETS
+================================= */
+
+/* Toute la section Projets */
+.projects {
+  min-height: 100vh;
+  padding: 100px 8%;
+  background-color: #07050d;
+  color: white;
+}
+
+/* Titre Mes Projets */
+.section-title {
+  margin-bottom: 60px;
+  text-align: center;
+  font-size: 45px;
+  color: white;
+}
+
+/* Le mot Projets devient violet */
+.section-title span {
+  color: #a855f7;
+}
+
+/* Boîte qui contient les trois cartes */
+.projects-container {
+  display: grid;
+
+  /* Trois cartes sur la même ligne */
+  grid-template-columns: repeat(3, 1fr);
+
+  /* Espace entre les cartes */
+  gap: 30px;
+
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Apparence de chaque carte */
+.project-card {
+  width: 100%;
+  min-height: 260px;
+  padding: 30px 25px;
+
+  /* Fond violet foncé */
+  background: linear-gradient(145deg, #5b21b6, #2e1065);
+
+  /* Bordure violette claire */
+  border: 2px solid #a855f7;
+  border-radius: 22px;
+
+  /* Texte */
+  color: white;
+  font-family: inherit;
+  text-align: left;
+
+  /* Petite ombre violette */
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.25);
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Effet quand tu passes la souris sur une carte */
+.project-card:hover {
+  background: linear-gradient(145deg, #7e22ce, #4c1d95);
+  box-shadow:
+    0 0 20px rgba(168, 85, 247, 0.7),
+    0 0 40px rgba(126, 34, 206, 0.3);
+
+  transform: translateY(-8px);
+}
+
+/* Icône du projet */
+.project-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(10, 5, 20, 0.5);
+  border: 1px solid #c084fc;
+  border-radius: 15px;
+
+  font-size: 30px;
+}
+
+/* Nom du projet */
+.project-card h3 {
+  margin-bottom: 18px;
+  color: white;
+  font-size: 27px;
+}
+
+/* Zone contenant les technologies */
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Petites étiquettes HTML, CSS, Linux... */
+.project-technologies span {
+  padding: 7px 12px;
+
+  color: white;
+  background-color: rgba(12, 6, 22, 0.45);
+
+  border: 1px solid #c084fc;
+  border-radius: 20px;
+
+  font-size: 12px;
+}
+
+/* Petit texte Cliquer pour découvrir */
+.project-instruction {
+  margin-top: 25px;
+  color: #e9d5ff;
+  font-size: 13px;
+}
+
+/* =================================
+   FENÊTRES DES PROJETS
+================================= */
+
+/* Toutes les fenêtres sont cachées au départ */
+.project-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  /* Fond noir transparent derrière la fenêtre */
+  background-color: rgba(0, 0, 0, 0.82);
+  backdrop-filter: blur(6px);
+}
+
+/* Cette classe sera ajoutée avec JavaScript */
+.project-modal.active {
+  display: flex;
+}
+
+/* Contenu de la fenêtre */
+.modal-content {
+  position: relative;
+
+  width: 100%;
+  max-width: 650px;
+  max-height: 85vh;
+  overflow-y: auto;
+
+  padding: 45px;
+
+  background: linear-gradient(145deg, #1b1029, #0b0711);
+
+  border: 2px solid #a855f7;
+  border-radius: 25px;
+
+  color: white;
+
+  box-shadow:
+    0 0 25px rgba(168, 85, 247, 0.65),
+    0 0 60px rgba(126, 34, 206, 0.3);
+
+  animation: openModal 0.3s ease;
+}
+
+/* Animation d’ouverture */
+@keyframes openModal {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Croix pour fermer */
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+
+  color: #c084fc;
+  background: transparent;
+  border: none;
+
+  font-size: 35px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-modal:hover {
+  color: white;
+  transform: rotate(90deg);
+}
+
+/* Icône dans la fenêtre */
+.modal-icon {
+  margin-bottom: 15px;
+  font-size: 45px;
+}
+
+/* Nom du projet dans la fenêtre */
+.modal-content h2 {
+  margin-bottom: 18px;
+  color: #a855f7;
+  font-size: 32px;
+}
+
+/* Petit titre Technologies utilisées */
+.modal-content h3 {
+  margin-top: 25px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+/* Description du projet */
+.modal-content p {
+  color: #ddd6e8;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* Technologies dans la fenêtre */
+.modal-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-bottom: 30px;
+}
+
+.modal-technologies span {
+  padding: 7px 13px;
+  color: #e9d5ff;
+  background-color: rgba(168, 85, 247, 0.15);
+  border: 1px solid #a855f7;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+/* Bouton Voir le projet */
+.project-link {
+  display: inline-block;
+  padding: 12px 25px;
+
+  color: white;
+  background: linear-gradient(135deg, #9333ea, #6d28d9);
+
+  border: 2px solid #a855f7;
+  border-radius: 25px;
+
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: 0.3s;
+}
+
+.project-link:hover {
+  color: #a855f7;
+  background: transparent;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.7);
+}
+
+/* =================================
+   VERSION TABLETTE ET TÉLÉPHONE
+================================= */
+
+/* Sur tablette : deux cartes par ligne */
+@media screen and (max-width: 950px) {
+  .projects-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Sur téléphone : une seule carte par ligne */
+@media screen and (max-width: 650px) {
+  .projects {
+    padding: 80px 7%;
+  }
+
+  .section-title {
+    font-size: 36px;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    padding: 40px 25px 30px;
+  }
+}
+.project-icon {
+  width: 60px; /* largeur du carré */
+  height: 60px; /* hauteur du carré */
+  display: flex; /* permet de centrer l’emoji */
+  align-items: center; /* centre verticalement */
+  justify-content: center; /* centre horizontalement */
+  background-color: #2e1065; /* fond violet foncé */
+  border: 1px solid #c084fc; /* contour violet clair */
+  border-radius: 15px; /* arrondit les angles */
+  font-size: 30px; /* agrandit l’emoji */
+}
+
+/* =================================
+   SECTION STAGE
+================================= */
+
+/* Toute la section */
+.internship {
+  min-height: 100vh;
+  padding: 100px 8%;
+  background-color: #07050d;
+  color: white;
+}
+
+/* Grande carte contenant le stage */
+.internship-container {
+  display: grid;
+
+  /* Partie gauche plus petite que la partie droite */
+  grid-template-columns: 35% 65%;
+
+  max-width: 1150px;
+  margin: 0 auto;
+
+  background: linear-gradient(145deg, #15101e, #0b0711);
+  border: 2px solid rgba(168, 85, 247, 0.6);
+  border-radius: 25px;
+
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.2);
+  overflow: hidden;
+}
+
+/* =================================
+   PARTIE GAUCHE
+================================= */
+
+.internship-visual {
+  min-height: 500px;
+  padding: 45px 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background: linear-gradient(145deg, #6d28d9, #3b0764);
+}
+
+/* Cercle contenant MTMSI */
+.internship-logo {
+  width: 170px;
+  height: 170px;
+  margin-bottom: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+  background-color: rgba(10, 5, 20, 0.45);
+
+  border: 3px solid #c084fc;
+  border-radius: 50%;
+
+  font-size: 32px;
+  font-weight: 700;
+
+  box-shadow: 0 0 25px rgba(216, 180, 254, 0.5);
+}
+
+/* Petite étiquette Stage de 2 mois */
+.internship-duration {
+  padding: 9px 18px;
+  margin-bottom: 15px;
+
+  color: white;
+  background-color: rgba(10, 5, 20, 0.4);
+
+  border: 1px solid #d8b4fe;
+  border-radius: 25px;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.internship-visual p {
+  color: #f3e8ff;
+  font-size: 16px;
+}
+
+/* =================================
+   PARTIE DROITE
+================================= */
+
+.internship-content {
+  padding: 50px;
+}
+
+/* Petit texte Expérience professionnelle */
+.internship-category {
+  margin-bottom: 10px;
+
+  color: #c084fc;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* Nom de l’association */
+.internship-content > h3 {
+  margin-bottom: 30px;
+
+  color: white;
+  font-size: 34px;
+}
+
+/* Chaque partie : contexte, missions et outils */
+.internship-part {
+  margin-bottom: 28px;
+}
+
+/* Petits titres */
+.internship-part h4 {
+  margin-bottom: 12px;
+
+  color: #a855f7;
+  font-size: 20px;
+}
+
+/* Paragraphes */
+.internship-part p {
+  color: #d6d1dc;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Liste des missions */
+.internship-tasks {
+  padding-left: 20px;
+}
+
+.internship-tasks li {
+  margin-bottom: 10px;
+
+  color: #d6d1dc;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* Couleur des puces de la liste */
+.internship-tasks li::marker {
+  color: #a855f7;
+}
+
+/* =================================
+   TECHNOLOGIES
+================================= */
+
+.internship-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+/* Petites étiquettes WordPress, CSS... */
+.internship-technologies span {
+  padding: 8px 14px;
+
+  color: #e9d5ff;
+  background-color: rgba(168, 85, 247, 0.15);
+
+  border: 1px solid #a855f7;
+  border-radius: 20px;
+
+  font-size: 13px;
+}
+
+/* =================================
+   BOUTON DU RAPPORT
+================================= */
+
+.internship-button {
+  display: inline-block;
+
+  padding: 12px 25px;
+
+  color: white;
+  background: linear-gradient(135deg, #9333ea, #6d28d9);
+
+  border: 2px solid #a855f7;
+  border-radius: 25px;
+
+  font-weight: 600;
+  text-decoration: none;
+
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.35);
+  transition: 0.3s ease;
+}
+
+/* Effet quand la souris passe sur le bouton */
+.internship-button:hover {
+  color: #a855f7;
+  background: transparent;
+
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.7);
+  transform: translateY(-3px);
+}
+
+/* =================================
+   TABLETTE ET TÉLÉPHONE
+================================= */
+
+@media screen and (max-width: 850px) {
+  .internship {
+    padding: 80px 7%;
+  }
+
+  /* Les deux parties passent l’une sous l’autre */
+  .internship-container {
+    grid-template-columns: 1fr;
+  }
+
+  .internship-visual {
+    min-height: 350px;
+  }
+
+  .internship-content {
+    padding: 40px 30px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .internship-logo {
+    width: 140px;
+    height: 140px;
+    font-size: 27px;
+  }
+
+  .internship-content {
+    padding: 35px 22px;
+  }
+
+  .internship-content > h3 {
+    font-size: 28px;
+  }
+}
+/* =========================================
+   SECTION CERTIFICATIONS
+========================================= */
+
+.certifications-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 110px 8%;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(circle at top, rgba(147, 51, 234, 0.17), transparent 35%),
+    #07050d;
+}
+
+/* =========================================
+   EN-TÊTE
+========================================= */
+
+.certifications-header {
+  max-width: 760px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.certifications-label {
+  margin-bottom: 14px;
+
+  color: #c084fc;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.certifications-title {
+  margin-bottom: 20px;
+
+  color: #ffffff;
+  font-size: 50px;
+  line-height: 1.2;
+}
+
+.certifications-title span {
+  color: #a855f7;
+}
+
+.certifications-introduction {
+  max-width: 650px;
+  margin: 0 auto;
+
+  color: #bdb5c8;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   FRISE VERTICALE
+========================================= */
+
+.certifications-timeline {
+  position: relative;
+
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Ligne violette au centre */
+.certifications-timeline::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+
+  width: 3px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #7e22ce 5%,
+    #a855f7 50%,
+    #7e22ce 95%,
+    transparent
+  );
+
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.7);
+
+  transform: translateX(-50%);
+}
+
+/* Une étape de la frise */
+.certification-step {
+  position: relative;
+
+  width: 100%;
+  margin-bottom: 45px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 90px minmax(0, 1fr);
+  align-items: center;
+}
+
+/* Numéro placé au centre */
+.certification-number {
+  z-index: 2;
+
+  grid-column: 2;
+  grid-row: 1;
+
+  width: 58px;
+  height: 58px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  background: linear-gradient(135deg, #9333ea, #581c87);
+
+  border: 4px solid #160b23;
+  border-radius: 50%;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  box-shadow:
+    0 0 0 2px #a855f7,
+    0 0 20px rgba(168, 85, 247, 0.65);
+}
+
+/* Carte d’une certification */
+.certification-content {
+  position: relative;
+  grid-row: 1;
+
+  width: 100%;
+  min-width: 0;
+  padding: 28px;
+  box-sizing: border-box;
+
+  background: linear-gradient(
+    145deg,
+    rgba(39, 17, 62, 0.97),
+    rgba(14, 8, 23, 0.98)
+  );
+
+  border: 1px solid rgba(192, 132, 252, 0.4);
+  border-radius: 20px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* Cartes 1, 3 et 5 à gauche */
+.certification-step:nth-child(odd) .certification-content {
+  grid-column: 1;
+}
+
+/* Cartes 2, 4 et 6 à droite */
+.certification-step:nth-child(even) .certification-content {
+  grid-column: 3;
+}
+
+/* Effet au passage de la souris */
+.certification-content:hover {
+  border-color: #a855f7;
+
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.35),
+    0 0 22px rgba(168, 85, 247, 0.25);
+
+  transform: translateY(-6px);
+}
+
+/* Catégorie et organisme */
+.certification-domain {
+  margin-bottom: 10px;
+
+  color: #a855f7;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+/* Nom de la certification */
+.certification-content h3 {
+  margin-bottom: 13px;
+
+  color: #ffffff;
+  font-size: 21px;
+  line-height: 1.4;
+}
+
+/* Description */
+.certification-description {
+  margin-bottom: 22px;
+
+  color: #bdb5c8;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+/* Bouton Voir le certificat */
+.certification-content a {
+  padding: 10px 18px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #ffffff;
+  background: linear-gradient(135deg, #9333ea, #6d28d9);
+
+  border: 1px solid #a855f7;
+  border-radius: 25px;
+
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+/* Animation du bouton */
+.certification-content a:hover {
+  color: #a855f7;
+  background: transparent;
+
+  box-shadow: 0 0 18px rgba(168, 85, 247, 0.45);
+}
+
+/* Flèche du bouton */
+.certification-content a span {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.certification-content a:hover span {
+  transform: translate(3px, -3px);
+}
+
+/* =========================================
+   PARCOURS EN ÉVOLUTION
+========================================= */
+
+.certifications-continuation {
+  max-width: 450px;
+  margin: 55px auto 0;
+  padding: 18px 22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  background-color: rgba(168, 85, 247, 0.08);
+
+  border: 1px dashed #7e22ce;
+  border-radius: 18px;
+
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.12);
+}
+
+/* Petit point animé */
+.continuation-dot {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+
+  background-color: #a855f7;
+  border-radius: 50%;
+
+  box-shadow: 0 0 15px #a855f7;
+
+  animation: continuationPulse 1.8s infinite;
+}
+
+/* Animation du point */
+@keyframes continuationPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.certifications-continuation strong {
+  color: #ffffff;
+  font-size: 16px;
+}
+
+.certifications-continuation p {
+  margin-top: 3px;
+
+  color: #bdb5c8;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* =========================================
+   VERSION TABLETTE
+========================================= */
+
+@media screen and (max-width: 800px) {
+  .certifications-section {
+    padding: 90px 7%;
+  }
+
+  .certifications-title {
+    font-size: 39px;
+  }
+
+  /* Déplace la ligne vers la gauche */
+  .certifications-timeline::before {
+    left: 29px;
+  }
+
+  /* Toutes les cartes passent à droite */
+  .certification-step {
+    grid-template-columns: 60px minmax(0, 1fr);
+    margin-bottom: 35px;
+  }
+
+  .certification-number {
+    grid-column: 1;
+    grid-row: 1;
+
+    width: 48px;
+    height: 48px;
+
+    font-size: 12px;
+  }
+
+  .certification-step:nth-child(odd) .certification-content,
+  .certification-step:nth-child(even) .certification-content {
+    grid-column: 2;
+    grid-row: 1;
+  }
+}
+
+/* =========================================
+   VERSION TÉLÉPHONE
+========================================= */
+
+@media screen and (max-width: 500px) {
+  .certifications-section {
+    padding: 80px 5%;
+  }
+
+  .certifications-header {
+    margin-bottom: 55px;
+  }
+
+  .certifications-title {
+    font-size: 33px;
+  }
+
+  .certifications-introduction {
+    font-size: 14px;
+  }
+
+  .certifications-timeline::before {
+    left: 22px;
+  }
+
+  .certification-step {
+    grid-template-columns: 45px minmax(0, 1fr);
+  }
+
+  .certification-number {
+    width: 39px;
+    height: 39px;
+
+    border-width: 3px;
+
+    font-size: 10px;
+  }
+
+  .certification-content {
+    padding: 22px 18px;
+  }
+
+  .certification-content h3 {
+    font-size: 18px;
+  }
+
+  .certifications-continuation {
+    padding: 16px;
+  }
+}
+/* =========================================
+   SECTION CONTACT
+========================================= */
+
+.contact-section {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+  padding: 110px 8%;
+  box-sizing: border-box;
+  overflow: hidden;
+
+  color: #ffffff;
+
+  background:
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(126, 34, 206, 0.17),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(168, 85, 247, 0.12),
+      transparent 25%
+    ),
+    #07050d;
+}
+
+/* =========================================
+   EN-TÊTE
+========================================= */
+
+.contact-header {
+  max-width: 820px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.contact-label {
+  margin-bottom: 14px;
+
+  color: #c084fc;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.contact-header h2 {
+  margin-bottom: 20px;
+
+  color: #ffffff;
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+.contact-header h2 span {
+  display: block;
+  color: #a855f7;
+}
+
+.contact-header > p:last-child {
+  max-width: 650px;
+  margin: 0 auto;
+
+  color: #bdb5c8;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   CONTENEUR PRINCIPAL
+========================================= */
+
+.contact-container {
+  width: 100%;
+  max-width: 1150px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 35px;
+}
+
+/* =========================================
+   INFORMATIONS À GAUCHE
+========================================= */
+
+.contact-information {
+  padding: 38px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(48, 20, 76, 0.95),
+    rgba(18, 9, 29, 0.98)
+  );
+
+  border: 1px solid rgba(192, 132, 252, 0.4);
+  border-radius: 25px;
+
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.3);
+}
+
+/* Indicateur de disponibilité */
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-bottom: 25px;
+  padding: 8px 13px;
+
+  color: #d1fae5;
+  background-color: rgba(34, 197, 94, 0.1);
+
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Point vert animé */
+.availability-dot {
+  width: 8px;
+  height: 8px;
+
+  background-color: #22c55e;
+  border-radius: 50%;
+
+  box-shadow: 0 0 10px #22c55e;
+
+  animation: availabilityPulse 1.8s infinite;
+}
+
+@keyframes availabilityPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.contact-information > h3 {
+  margin-bottom: 15px;
+
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.contact-text {
+  margin-bottom: 32px;
+
+  color: #bdb5c8;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Liens de contact */
+.contact-detail {
+  width: 100%;
+  margin-bottom: 13px;
+  padding: 15px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  color: #ffffff;
+  background-color: rgba(8, 4, 14, 0.35);
+
+  border: 1px solid rgba(192, 132, 252, 0.25);
+  border-radius: 15px;
+
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.contact-detail:hover {
+  border-color: #a855f7;
+  background-color: rgba(168, 85, 247, 0.1);
+  transform: translateX(6px);
+}
+
+/* Petite icône */
+.contact-detail-icon {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  background: linear-gradient(135deg, #9333ea, #6d28d9);
+
+  border-radius: 13px;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Texte du lien */
+.contact-detail-text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 3px;
+
+  min-width: 0;
+}
+
+.contact-detail-text small {
+  color: #a99fb5;
+  font-size: 11px;
+}
+
+.contact-detail-text strong {
+  overflow: hidden;
+
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.contact-arrow {
+  color: #c084fc;
+  font-size: 18px;
+}
+
+/* Organisation du formulaire de contact */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 18px;
+  color: #d8b4fe;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea {
+  display: block;
+  width: 100%;
+  padding: 18px 20px;
+  color: white;
+  background-color: #160d25;
+  border: 1px solid #553076;
+  border-radius: 16px;
+  font-family: inherit;
+  font-size: 16px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #a855f7;
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.3);
+}
+
+.contact-submit {
+  width: 100%;
+  margin-top: 18px;
+  padding: 18px;
+  color: white;
+  background: linear-gradient(135deg, #9333ea, #6d28d9);
+  border: none;
+  border-radius: 16px;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.contact-submit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.5);
+}
+
+/* =========================================
+   PIED DE PAGE
+========================================= */
+
+.portfolio-footer {
+  padding: 25px 8%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  color: #8f859a;
+  background-color: #050308;
+
+  border-top: 1px solid rgba(168, 85, 247, 0.2);
+
+  font-size: 13px;
+}
+
+.portfolio-footer a {
+  color: #c084fc;
+  text-decoration: none;
+}
+
+.portfolio-footer a:hover {
+  color: #ffffff;
+}
+
+/* =========================================
+   TABLETTE ET TÉLÉPHONE
+========================================= */
+
+@media screen and (max-width: 850px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-header h2 {
+    font-size: 39px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contact-section {
+    padding: 85px 5%;
+  }
+
+  .contact-header h2 {
+    font-size: 33px;
+  }
+
+  .contact-information,
+  .contact-form-container {
+    padding: 27px 22px;
+  }
+
+  .portfolio-footer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+}
